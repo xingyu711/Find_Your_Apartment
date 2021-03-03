@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/SignUp.css">
+</head>
+<body>
+    <div>
+      <div class="SignUp">
+        <div class="container-fluid d-flex justify-content-center">
+          <div class="signcard">
+            <div class="card-header">
+              <h3>Sign Up</h3>
+            </div>
+            <div class="card-body">
+              <form action="/auth/signup" method="POST">
+                <div class="form-group">
+                  <label for="username">Username</label>
+                  <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    class="form-control"
+                    placeholder="Alice"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    class="form-control"
+                    placeholder="123abc"
+                  />
+                </div>
+                <div class="form group">
+                  <label for="password2">Verify Password</label>
+                  <input
+                    type="password"
+                    id="password2"
+                    name="password2"
+                    class="form-control"
+                    placeholder="123abc"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="submit"
+                    class="btn btn-dark"
+                    value="Sign Up"
+                  />
+                </div>
+                <div class="form-group">
+                  Already an user? <a href="./sign_in.html">Sign In</a>
+                  <br />
+                  <a href="index.html">Cancel and return home</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+</body>
+</html>
