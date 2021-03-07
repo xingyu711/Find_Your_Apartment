@@ -9,7 +9,6 @@ body {
   z-index: 9997;
 }
 
-
 section {
   position: relative;
   width: 100%;
@@ -18,21 +17,21 @@ section {
 
 .menu {
   display: block;
-  margin: 10px;
+  margin: 20px;
   position: fixed;
-  width: 99%;
+  width: 25%;
   align-items: end;
-  z-index: 9999;
+  z-index: 99;
 }
 
 .button {
   padding: 10px;
   margin: 2px;
-  float: right;
+  float: left;
   font-size: 20px;
   color: white;
-  background: linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
-  background-color: #7d5d3b;
+  background: linear-gradient(to bottom, #c2b09d 2%, #091b66 100%);
+  background-color: #decdbe;
   border: 1px solid #54381e;
   cursor: pointer;
   font-size: 14px;
@@ -41,8 +40,8 @@ section {
 }
 
 .button:hover {
-  background: linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
-  background-color: #634b30;
+  background: linear-gradient(to bottom, #c2b09d 5%, #043d35 100%);
+  background-color: #0e4b4d;
 }
 
 .main {
@@ -81,9 +80,8 @@ p {
   background-blend-mode: lighten;
 }
 
-
 #section1 a {
-  padding-top: 60px;
+  padding-top: 65px;
 }
 #section1 a span {
   position: absolute;
