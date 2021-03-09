@@ -1,13 +1,78 @@
-<!Doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" xmlns:Content-type="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/SignIn.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
+
 <body>
+<div>
+    <div class="SignIn">
+        <div class="container-fluid d-flex justify-content-center">
+            <div class="signcard">
+                <div class="card-header">
+                    <h3>Sign In</h3>
+                </div>
+                <div class="card-body">
+                    <form action="http://127.0.0.1:3000/test/process_get" method="POST">
+                        <div class="form-group">
+                            <label for="userName">Username</label>
+                            <input
+                                    type="text"
+                                    id="userName"
+                                    name="userName"
+                                    class="form-control"
+                                    placeholder="Alice"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="passWord">Password</label>
+                            <input
+                                    type="text"
+                                    id="passWord"
+                                    name="passWord"
+                                    class="form-control"
+                                    placeholder="123abc"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <input
+                                    type="submit"
+                                    class="btn btn-dark"
+                                    value="Sign In"
+                            />
+                        </div>
+                        <div class="form-group">
+                            Not an user? <a href="sign_up.html">Sign up here</a>
+                            <br />
+                            <a href="index.html">Cancel and return home</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
+<!--<div class="login">
+    <h4>登录</h4>
+    <div class="content">
+        //点击提交路由变化
+        <form action="/test/process_get" method="POST">
+            userName: <input type="text" name="userName">  <br>
+            passWord: <input type="text" name="passWord">
+
+            <input type="submit" value="login">
+        </form>
+        // 点击注册进到注册页面
+        <form action="/test/regin" method="POST">
+            <input type="submit" value="regin">
+        </form>
+    </div>
+</div>-->
 </html>

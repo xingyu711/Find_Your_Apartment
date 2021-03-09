@@ -1,19 +1,31 @@
 module.exports = {
-	env: {
-		browser: true,
-		es2021: true,
-		amd: true,
-		node: true,
+	"env": {
+		"browser": true,
+		"es2021": true,
+		"amd": true,
+		"node": true,
 	},
-	extends: "eslint:recommended",
-	parserOptions: {
-		ecmaVersion: 12,
-		sourceType: "module",
+	"extends": "eslint:recommended",
+	"parserOptions": {
+		"ecmaVersion": 12,
+		"sourceType": "module"
 	},
-	rules: {
-		indent: ["error", "tab"],
-		"linebreak-style": ["error", "unix"],
-		quotes: ["error", "double"],
-		semi: ["error", "always"],
-	},
+	"rules": {
+		"indent": [
+			"error",
+			"tab"
+		],
+		"linebreak-style": [
+			"error",
+			"unix"
+		],
+		"quotes": [
+			"error",
+			"double"
+		],
+		"semi": [
+			"error",
+			"always"
+		]
+	}
 };

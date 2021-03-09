@@ -1,31 +1,26 @@
 {
-  "name": "find-your-apartment",
+  "name": "generator",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "monstart": "nodemon ./bin/www"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "^4.16.4",
-    "morgan": "~1.9.1",
+    "express-session": "^1.17.1",
+    "flash": "^1.1.0",
+    "mongodb": "^3.6.4",
+    "morgan": "^1.9.1",
     "nodemon": "^2.0.7",
-    "prettier": "^2.2.1"
+    "path": "^0.12.7",
+    "prettier": "^2.2.1",
+    "req-flash": "0.0.3"
   },
-  "description": "",
-  "main": "index.js",
   "devDependencies": {
     "eslint": "^7.21.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/KKDJOSEPH/Find_Your_Apartment.git"
-  },
-  "author": "Haoyang Ding",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/KKDJOSEPH/Find_Your_Apartment/issues"
-  },
-  "homepage": "https://github.com/KKDJOSEPH/Find_Your_Apartment#readme"
+  }
 }

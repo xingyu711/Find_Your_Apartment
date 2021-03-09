@@ -1,56 +1,35 @@
-const { MongoClient, ObjectId } = require("mongodb");
+const { MongoClient } = require("mongodb");
 
 function MyDB() {
 	const myDB = {};
 
-	const url = process.env.MONGO_URL || "mongodb://localhost:27017";
-	const DB_NAME = "DB";
+	const uri =
+		process.env.MONGO_URL || "mongodb://localhost:27017";
 
-	myDB.getPosts = async (query = {}) => {
-		let client;
-		try {
-			client = new MongoClient(url, { useUnifiedTopology: true });
-			await client.connect();
-			const db = client.db(DB_NAME);
-			const posts = db.collection("posts");
-			const post = await posts.find(query).toArray();
-			return post;
-		} finally {
-			console.log("Closing the connection");
-			client.close();
-		}
+
+	myDB.initializeUsers = async () => {	
+		const client = new MongoClient(uri, { useUnifiedTopology: true });
+		await client.connect();
+
+		const db = client.db("db");
+		const users = db.collection("users");
+		return users;
 	};
 
-	myDB.deletePost = async (postTodelete) => {
-		let client;
-		try {
-			client = new MongoClient(url, { useUnifiedTopology: true });
-			await client.connect();
-			const db = client.db(DB_NAME);
-			const posts = db.collection("posts");
-			const post = await posts.deleteOne({ _id: ObjectId(postTodelete._id) });
-			return post;
-		} finally {
-			console.log("Closing the connection");
-			client.close();
-		}
-	};
+	myDB.getUsers = async () => {
+		const client = new MongoClient(uri, { useUnifiedTopology: true });
+		await client.connect();
+		//database
+		const db = client.db("db");
+		//collection
+		const users = db.collection("users");
 
-	myDB.createPost = async (newPost) => {
-		let client;
-		try {
-			client = new MongoClient(url, { useUnifiedTopology: true });
-			await client.connect();
-			const db = client.db(DB_NAME);
-			const posts = db.collection("posts");
-			const post = await posts.insertOne(newPost);
-			return post;
-		} finally {
-			console.log("Closing the connection");
-			client.close();
-		}
+		const query = {};
+		return users
+			.find(query)
+			.toArray()
+			.finally(() => client.close());
 	};
-
 	return myDB;
 }
 
