@@ -8,7 +8,7 @@ router.get("/", function(req, res, next) {
 });
 
 
-router.get("/posts", async (req, res) => {
+router.get("/getPosts", async (req, res) => {
 	try {
 		console.log("myDB", myDB);
 		const posts = await myDB.getPosts();
