@@ -64,6 +64,15 @@ header {
   display: flex;
 }
 
+h1,
+h2 {
+  color: white;
+}
+
+h3 {
+  color: rgb(0, 0, 0);
+}
+
 p {
   font-size: 3.5vh;
   width: 50%;
@@ -111,4 +120,13 @@ p {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+#textbox2 {
+  height: 200px;
+  font-size: 14pt;
+  width: 400px;
+  text-align: top;
+  padding-top: 0;
+  padding-left: 0;
 }
