@@ -26,7 +26,7 @@ router.post("/regin", function (req, res) {
 });
 
 //点击登录触发事件
-router.post("/process_get", function (req, res) {
+router.post("/signin", function (req, res) {
 	console.log("what do I got??   %j", req.body);
 	var response = {
 		"userName":req.body.userName,
@@ -56,17 +56,12 @@ router.post("/process_get", function (req, res) {
 			if(flag) {
 				console.log(result, "登录成功");
 				// 进入到登录成功的页面
-				res.redirect(301, "/index.html");
+				res.redirect("../public/index.html");
 
 			} else {
-				console.log("login errrrrr");
-				req.flash("errorMessage", "Wrong user name or password");
-				fs.readFile("./public/sign_up.html", function(err,data) {
-					if (err) return console.log(err);
-					// res.setHeader('Content-Type', 'text/html');
-					res.end(data,JSON.stringify(response));
-				});
-				console.log("login errrrrr here??");
+				console.log(result, "登录失败");
+				// 进入到登录失败的页面
+				res.redirect("../public/sign_up.html");
 			}
 			db.close();
 		});
