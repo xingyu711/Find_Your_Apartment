@@ -4,7 +4,7 @@ async function sendflag(){
 	const flag = await fetch("/getflag", {
 		method: "POST"
 	});
-	console.log("Have I been to here????");
+	console.log("Have I been here????");
 	console.log("What is the flag HERE??  ", flag);
 	const res = await flag.json();
 	console.log("FLAG IS HERE  ", res);
@@ -27,4 +27,4 @@ async function sendflag(){
 	divflag.appendChild(divName);
 }
 
-sendflag()
+sendflag();

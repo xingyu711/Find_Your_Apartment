@@ -16,6 +16,7 @@ router.post("/test/signin", async function (req, res) {
 	if(signinflag) {
 		console.log(req.body, "登录成功");
 		// 进入到登录成功的页面
+		//res.redirect("/getflag");
 		res.redirect("/post.html");
 
 	} else {
@@ -48,7 +49,7 @@ router.post("/test/signup", async function (req, res) {
 	}
 });
 
-router.get("/getflag", async (req, res) =>{
+router.post("/getflag", async (req, res) =>{
 	console.log("what is the request here?  ", req.body);
 	let textCont = "";
 	if(signinflag) textCont = "Sign in Successful";
