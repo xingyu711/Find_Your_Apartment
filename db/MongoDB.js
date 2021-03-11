@@ -43,7 +43,9 @@ function MyDB() {
 				return flag;
 			}
 		});
-		if(flag){
+		if(flag){ // ************** Without this flag, evenif I have returned the flag in the last "if",
+			// it would still insert the myobj into the database. So I have to make another "if"
+			// to make sure that wouldn't happen ************************************
 			const myobj = {name: Users.userName,password: Users.passWord};
 			await result.insertOne(myobj, function(err) {
 				if (err) throw err;
