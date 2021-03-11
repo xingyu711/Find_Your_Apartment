@@ -1,7 +1,10 @@
 const divflag = document.querySelector(".container");
 
 async function sendflag(){
-	const flag = await fetch("/getflag");
+	const flag = await fetch("/getflag", {
+		method: "POST"
+	});
+	console.log("Have I been to here????");
 	console.log("What is the flag HERE??  ", flag);
 	const res = await flag.json();
 	console.log("FLAG IS HERE  ", res);

@@ -7,31 +7,6 @@ function MyDB() {
 		process.env.MONGO_URL || "mongodb://localhost:27017";
 
 
-	myDB.initializeUsers = async () => {	
-		const client = new MongoClient(uri, { useUnifiedTopology: true });
-		await client.connect();
-
-		const db = client.db("db");
-		const users = db.collection("users");
-		return users;
-	};
-
-	myDB.getUsers = async () => {
-		const client = new MongoClient(uri, { useUnifiedTopology: true });
-		await client.connect();
-		//database
-		const db = client.db("db");
-		//collection
-		const users = db.collection("users");
-
-		const query = {};
-		return users
-			.find(query)
-			.toArray()
-			.finally(() => client.close());
-	};
-
-
 	myDB.signin = async (Users) => {
 		console.log("users are here:  ", Users);
 		const client = new MongoClient(uri, {useUnifiedTopology: true});

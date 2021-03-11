@@ -3,15 +3,17 @@ const router = express.Router();
 const myDB = require("../db/MongoDB.js");
 const secret = require("./crypt.js");
 
+let signinflag = false;
+let signupflag = false;
 router.post("/test/signin", async function (req, res) {
 	const pw = secret.encrypt(req.body.passWord);
 	const body = {
 		"userName": req.body.userName,
 		"passWord": pw
 	};
-	const flag = await myDB.signin(body);
-	console.log("flag is here: ", flag);
-	if(flag) {
+	signinflag = await myDB.signin(body);
+	console.log("flag is here: ", signinflag);
+	if(signinflag) {
 		console.log(req.body, "登录成功");
 		// 进入到登录成功的页面
 		res.redirect("/post.html");
@@ -35,9 +37,9 @@ router.post("/test/signup", async function (req, res) {
 		"userName": req.body.userName,
 		"passWord": pw
 	};
-	const flag = await myDB.signup(body);
-	console.log("what is this flag here???", flag);
-	if(flag){
+	signupflag = await myDB.signup(body);
+	console.log("what is this flag here???", signupflag);
+	if(signupflag){
 		console.log(req.body, "注册成功");
 		res.redirect("/sign_in.html");
 	}else{
@@ -45,6 +47,13 @@ router.post("/test/signup", async function (req, res) {
 		res.redirect("/sign_up.html");
 	}
 });
+
+router.get("/getflag", async (req, res) =>{
+	console.log("what is the request here?  ", req.body);
+	res.send({flag: signinflag});
+});
+
+
 
 module.exports = router;
 
