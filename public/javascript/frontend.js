@@ -1,6 +1,7 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 const divPosts = document.querySelector("#posts");
 
+
 async function deletePost(post) {
 	// Default options are marked with *
 	const resRaw = await fetch("/deletePost", {
@@ -46,5 +47,6 @@ async function reloadPosts() {
   
 	res.posts.forEach(renderPosts);
 }
+
 
 reloadPosts();
