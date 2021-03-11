@@ -50,7 +50,10 @@ router.post("/test/signup", async function (req, res) {
 
 router.get("/getflag", async (req, res) =>{
 	console.log("what is the request here?  ", req.body);
-	res.send({flag: signinflag});
+	let textCont = "";
+	if(signinflag) textCont = "Sign in Successful";
+	else textCont = "Wrong User name or Password"
+	res.send({flag: signinflag, text: textCont});
 });
 
 
