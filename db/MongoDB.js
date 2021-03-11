@@ -37,7 +37,7 @@ function MyDB() {
 		const client = new MongoClient(uri, {useUnifiedTopology: true});
 		await client.connect();
 		//database
-		const db = client.db("fristNode");
+		const db = client.db("UserPw");
 		let flag = false;
 		const result = await db.collection("userInfo").find().toArray();
 		console.log("result is here:   ", result);
@@ -56,7 +56,7 @@ function MyDB() {
 		const client = new MongoClient(uri, {useUnifiedTopology: true});
 		await client.connect();
 		//database
-		const db = client.db("fristNode");
+		const db = client.db("UserPw");
 		const result = await db.collection("userInfo");
 		const users = await result.find().toArray();
 		console.log("what is users I have now?   ", users);

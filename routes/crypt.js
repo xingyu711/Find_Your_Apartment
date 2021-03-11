@@ -1,6 +1,6 @@
 const crypto = require("crypto"),
 	key = "wdnmdwdnmdwdnmdwdnmdwdnmdwdnmdwd",
-	iv = "f0644aa8566bdd13";
+	iv = "sndsndsndsndsndd";
 
 function encrypt(data) {
 	let cipher = crypto.createCipheriv("aes-256-cbc", key, iv);
