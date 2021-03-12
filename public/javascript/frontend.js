@@ -20,15 +20,19 @@ async function deletePost(post) {
   
 function renderPosts(post) {
 	const divPost = document.createElement("div");
-  
-	divPost.className = "post card p-2 col-6";
+  	divPost.className = "post col-6";
+
 	divPost.innerHTML = `<div>${post.title}</div>
 	<br />
 	<div>${post.content}</div>`;
-  
-	const divName = document.createElement("div");
-	divName.textContent = post.name;
-	divPost.appendChild(divName);
+
+	const divTitle = document.createElement("div");
+	divTitle.textContent = post.title;
+	divPost.appendChild(divTitle);
+
+	const divCon = document.createElement("div");
+	divCon.textContent = post.content;
+	divPost.appendChild(divCon);
   
 	const btnDelete = document.createElement("button");
 	btnDelete.textContent = "x";
@@ -43,8 +47,9 @@ async function reloadPosts() {
 	const resRaw = await fetch("/getPosts");
 	const res = await resRaw.json();
   
-	console.log("Got data", res);
-  
+	console.log("Got Posts", res);
+	
+	divPosts.innerHTML = "";
 	res.posts.forEach(renderPosts);
 }
 
