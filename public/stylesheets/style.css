@@ -54,8 +54,8 @@ section {
   margin: 2px;
   float: left;
   font-size: 20px;
-  color: white;
-  background: linear-gradient(to bottom, #c2b09d 2%, #091b66 100%);
+  color: black;
+  background: linear-gradient(to bottom, #FAF9DE 100%, #091b66 2%);
   background-color: #decdbe;
   border: 1px solid #54381e;
   cursor: pointer;
@@ -66,7 +66,7 @@ section {
 }
 
 .button:hover {
-  background: linear-gradient(to bottom, #c2b09d 5%, #043d35 100%);
+  background: linear-gradient(to bottom, #fad8be 5%, #cbf5fb 100%);
   background-color: #0e4b4d;
 }
 
