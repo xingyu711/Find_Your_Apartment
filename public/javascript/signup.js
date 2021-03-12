@@ -1,7 +1,7 @@
 const divflag = document.querySelector(".containAlert");
 
 async function sendflag(){
-	const flag = await fetch("/getSigninFlag", {
+	const flag = await fetch("/getSignupFlag", {
 		method: "POST"
 	});
 	console.log("Have I been here????");
@@ -13,14 +13,14 @@ async function sendflag(){
 		console.log("FLAG IS HERE  ", res);
 		const divName = document.createElement("div");
 		/*
-		try to add some html directly:
-		const temp = document.createElement("div");
-		const trytext = "<div class=\"alert alert-success alert-dismissable\" role=\"alert\" id=\"windows\">\n" +
-			"    <button class=\"close\" type=\"button\" data-dismiss=\"alert\">×</button>\n" +
-			"    \n" +
-			"</div>";
-		temp.innerHTML = trytext;
-		 */
+        try to add some html directly:
+        const temp = document.createElement("div");
+        const trytext = "<div class=\"alert alert-success alert-dismissable\" role=\"alert\" id=\"windows\">\n" +
+            "    <button class=\"close\" type=\"button\" data-dismiss=\"alert\">×</button>\n" +
+            "    \n" +
+            "</div>";
+        temp.innerHTML = trytext;
+         */
 
 		divName.textContent = res.text;
 		divName.className = "alert alert-danger alert-dismissible fade show";
