@@ -6,12 +6,16 @@ const secret = require("./crypt.js");
 let signinflag = false;
 let signupflag = false;
 let pwflag = false;
+let SIUN = "";
+let SUUN = "";
 router.post("/test/signin", async function (req, res) {
 	const pw = secret.encrypt(req.body.passWord);
 	const body = {
 		"userName": req.body.userName,
 		"passWord": pw
 	};
+	if(req.body.userName === "") return;
+	SIUN = req.body.userName;
 	signinflag = await myDB.signin(body);
 	console.log("flag is here: ", signinflag);
 	if(signinflag) {
@@ -29,6 +33,8 @@ router.post("/test/signin", async function (req, res) {
 
 router.post("/test/signup", async function (req, res) {
 	console.log("what is the body here??   ", req.body);
+	SUUN = req.body.userName;
+	if(req.body.userName === "") return;
 	if(req.body.passWord != req.body.passWord2){
 		pwflag = true;
 		signupflag = false;
@@ -54,6 +60,7 @@ router.post("/test/signup", async function (req, res) {
 });
 
 router.post("/getSigninFlag", async (req, res) =>{
+	if(SIUN === "") return;
 	let textCont = "";
 	if(signinflag) textCont = "Sign in Successful";
 	else textCont = "Wrong User name or Password";
@@ -61,6 +68,7 @@ router.post("/getSigninFlag", async (req, res) =>{
 });
 
 router.post("/getSignupFlag", async (req, res) =>{
+	if(SUUN === "") return;
 	console.log("pwflag:    " + pwflag + "signupflag:    " + signupflag);
 	let textCont = "";
 	if(pwflag) textCont = "Passwords are not same";
