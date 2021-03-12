@@ -1,18 +1,18 @@
-const { MongoClient } = require("mongodb");
+const { MongoClient, ObjectID } = require("mongodb");
 
 function MyDB() {
 	const myDB = {};
-
-	const uri =
+	const DB_NAME = "apartmentsDB";
+	const url =
 		process.env.MONGO_URL || "mongodb://localhost:27017";
 
 
 	myDB.signin = async (Users) => {
 		console.log("users are here:  ", Users);
-		const client = new MongoClient(uri, {useUnifiedTopology: true});
+		const client = new MongoClient(url, {useUnifiedTopology: true});
 		await client.connect();
 		//database
-		const db = client.db("UserPw");
+		const db = client.db(DB_NAME);
 		let flag = false;
 		const result = await db.collection("userInfo").find().toArray();
 		console.log("result is here:   ", result);
@@ -28,10 +28,10 @@ function MyDB() {
 	};
 
 	myDB.signup = async (Users) =>{
-		const client = new MongoClient(uri, {useUnifiedTopology: true});
+		const client = new MongoClient(url, {useUnifiedTopology: true});
 		await client.connect();
 		//database
-		const db = client.db("UserPw");
+		const db = client.db(DB_NAME);
 		const result = await db.collection("userInfo");
 		const users = await result.find().toArray();
 		console.log("what is users I have now?   ", users);
@@ -43,9 +43,7 @@ function MyDB() {
 				return flag;
 			}
 		});
-		if(flag){ // ************** Without this flag, evenif I have returned the flag in the last "if",
-			// it would still insert the myobj into the database. So I have to make another "if"
-			// to make sure that wouldn't happen ************************************
+		if(flag){
 			const myobj = {name: Users.userName,password: Users.passWord};
 			await result.insertOne(myobj, function(err) {
 				if (err) throw err;
@@ -53,6 +51,51 @@ function MyDB() {
 			});
 		}
 		return flag;
+	};
+
+	myDB.getPosts = async (query = {}) => {
+		let client;
+		try {
+			client = new MongoClient(url, { useUnifiedTopology: true });
+			await client.connect();
+			const db = client.db(DB_NAME);
+			const posts = db.collection("posts");
+			const post = await posts.find(query).toArray();
+			return post;
+		} finally {
+			console.log("Closing the connection");
+			client.close();
+		}
+	};
+
+	myDB.deletePost = async (postTodelete) => {
+		let client;
+		try {
+			client = new MongoClient(url, { useUnifiedTopology: true });
+			await client.connect();
+			const db = client.db(DB_NAME);
+			const posts = db.collection("posts");
+			const post = await posts.deleteOne({ _id: ObjectID(postTodelete._id) });
+			return post;
+		} finally {
+			console.log("Closing the connection");
+			client.close();
+		}
+	};
+
+	myDB.createPost = async (newPost) => {
+		let client;
+		try {
+			client = new MongoClient(url, { useUnifiedTopology: true });
+			await client.connect();
+			const db = client.db(DB_NAME);
+			const posts = db.collection("posts");
+			const post = await posts.insertOne(newPost);
+			return post;
+		} finally {
+			console.log("Closing the connection");
+			client.close();
+		}
 	};
 
 	return myDB;
