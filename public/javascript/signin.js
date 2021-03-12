@@ -15,12 +15,13 @@ async function sendflag(){
 		/*
 		try to add some html directly:
 		const temp = document.createElement("div");
-		const trytext = "<div class=\"alert alert-success alert-dismissable\" role=\"alert\" id=\"windows\">\n" +
-			"    <button class=\"close\" type=\"button\" data-dismiss=\"alert\">×</button>\n" +
-			"    \n" +
+		const trytext = "<div class=\"alert alert-primary\" role=\"alert\">\n" +
+			"  A simple primary alert—check it out!\n" +
 			"</div>";
 		temp.innerHTML = trytext;
-		 */
+
+ 		*/
+
 
 		divName.textContent = res.text;
 		divName.className = "alert alert-danger alert-dismissible fade show";
