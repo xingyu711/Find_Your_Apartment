@@ -98,6 +98,28 @@ function MyDB() {
 		}
 	};
 
+	// myDB.createComment = async (comment) => {
+	// 	let client;
+	// 	const id = comment[0];
+	// 	const o_id = new ObjectID(id);
+	// 	const DB = client.db(DB_NAME);
+	// 	console.log(comment);
+	// 	const userCollection = DB.collection("posts");
+	// 	const query = { _id: o_id };
+	// 	const update = {
+	// 	  $push: {
+	// 			commentList: {
+	// 		  firstName: comment[1],
+	// 		  lastName: comment[2],
+	// 		  comment: comment[3],
+	// 			},
+	// 	  },
+	// 	};
+  
+	// 	userCollection.findOneAndUpdate(query, update);
+	// 	console.log(query);
+	// };
+
 	return myDB;
 }
 

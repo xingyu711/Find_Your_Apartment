@@ -2,9 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Posts Preview</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -12,23 +11,18 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" href="./stylesheets/style.css" />
+    <link href="./images/home.png" type="image/x-icon" rel="icon" />
   </head>
   <body>
-    <div class="container">
+    <div class="container bg">
       <h1>Posts Preview</h1>
 
       <div class="row">
-        <div class="col-10">
-          <div id="post" class="row"></div>
-        </div>
+        <div class="col-9" id="posts"></div>
 
-        <div class="col-2">
-          <h2>Write a New Post</h2>
-          <a
-            action="/createPost"
-            method="POST"
-            enctype="multipart/form-data"
-          >
+        <div class="col-3">
+          <h2>Create a New Post</h2>
+          <form action="/createPost" method="post">
             <label class="form-label"
               ><h3>Title:</h3>
               <input class="form-control" type="text" name="title"
@@ -37,17 +31,24 @@
             <label class="form-label"
               ><h3>Content:</h3>
               <input
-                id="textbox2"
+                id="textbox"
                 class="form-control"
                 type="text"
-                name="posts"
+                name="content"
             /></label>
             <br />
-            <a href="post.html"> <button type="submit" class="btn btn-primary">Submit</button> </a>
+            <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
       </div>
     </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
     <script src="./javascript/frontend.js"></script>
+    <script src="./javascript/signin.js"></script>
   </body>
 </html>

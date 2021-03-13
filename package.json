@@ -10,8 +10,9 @@
     "body-parser": "^1.19.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     "express-fileupload": "^1.2.1",
+    "express-generator": "^4.16.1",
     "express-session": "^1.17.1",
     "flash": "^1.1.0",
     "mongodb": "^3.6.4",
@@ -22,6 +23,6 @@
     "req-flash": "0.0.3"
   },
   "devDependencies": {
-    "eslint": "^7.21.0"
+    "eslint": "^7.22.0"
   }
 }
