@@ -1,6 +1,9 @@
 const divflag = document.querySelector(".containAlert");
-
 async function sendflag(){
+	const nm = document.getElementsByName("userName")[0].value;
+	const pw = document.getElementsByName("passWord")[0].value;
+	console.log("what is nm????    ", nm);
+	console.log("what is pw????    ", pw);
 	const flag = await fetch("/getSigninFlag", {
 		method: "POST"
 	});
@@ -34,6 +37,9 @@ async function sendflag(){
 }
 
 function test(){
+	document.getElementById("button").addEventListener("click", function(){
+
+	});
 	document.getElementById("button").addEventListener("click", sendflag);
 }
 test();

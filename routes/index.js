@@ -93,6 +93,55 @@ router.post("/getSignupFlag", async (req, res) =>{
 	}
 });
 
+router.get("/getPosts", async (req, res) => {
+	try {
+		const posts = await myDB.getPosts();
+		res.send({posts: posts});
+
+		//res.send({title: post.title, content: post.content});
+	} catch (e) {
+		console.log("Error", e);
+		res.status(400).send({ err: e });
+	}
+});
+
+router.post("/deletePost", async (req, res) => {
+	console.log("Delete Post", req.body);
+	try {
+		const post = req.body;
+		const dbRes = await myDB.deletePost(post);
+		res.send({ done: dbRes });
+	} catch (e) {
+		console.log("Error", e);
+		res.status(400).send({ err: e });
+	}
+});
+
+router.post("/createPost", async (req, res) => {
+	console.log("Create Post", req.body);
+	try {
+		const posts = req.body;
+		const dbRes = await myDB.createPost(posts);
+		res.send({ done: dbRes });
+		res.redirect("/post.html");
+	} catch (e) {
+		console.log("Error", e);
+		res.status(400).send({ err: e });
+	}
+});
+
+// router.post("/createComment", async (req, res) => {
+// 	console.log("Create Comment", req.body);
+// 	try {
+// 		const comment = req.body;
+// 		const dbRes = await myDB.createComment(comment);
+// 		res.send({ done: dbRes });
+// 	} catch (e) {
+// 		console.log("Error", e);
+// 		res.status(400).send({ err: e });
+// 	}
+// });
+
 
 
 module.exports = router;
