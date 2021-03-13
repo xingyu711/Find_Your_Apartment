@@ -61,6 +61,7 @@ function MyDB() {
 			const db = client.db(DB_NAME);
 			const posts = db.collection("posts");
 			const post = await posts.find(query).toArray();
+			console.log(post);
 			return post;
 		} finally {
 			console.log("Closing the connection");
@@ -84,6 +85,7 @@ function MyDB() {
 	};
 
 	myDB.createPost = async (newPost) => {
+		console.log("WHAT IS THE NEW POST?     ", newPost);
 		let client;
 		try {
 			client = new MongoClient(url, { useUnifiedTopology: true });
@@ -91,6 +93,7 @@ function MyDB() {
 			const db = client.db(DB_NAME);
 			const posts = db.collection("posts");
 			const post = await posts.insertOne(newPost);
+			console.log("WHAT IS THE POST HERE     ", post);
 			return post;
 		} finally {
 			console.log("Closing the connection");

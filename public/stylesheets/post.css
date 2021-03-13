@@ -1,0 +1,55 @@
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow: auto;
+    z-index: -1;
+}
+
+.bg {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow: auto;
+    background-size: 100% 100%;
+    background: url(../images/bg2.jpg) no-repeat center center;
+    background-blend-mode: soft-light;
+    z-index: 0;
+}
+
+
+.main {
+    color: #3c240f;
+    display: flex;
+    font-family: "Playfair Display", serif;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    z-index: 5;
+}
+
+h1 {
+    z-index: 10;
+}
+
+.col-3{
+    z-index: 10;
+}
+
+.col-9{
+    text-align: right;
+    z-index: 10;
+}
+#textbox {
+    height: 200px;
+    font-size: 14pt;
+    width: 400px;
+    text-align: top;
+    padding-top: 0;
+    padding-left: 0;
+    z-index: 10;
+}
