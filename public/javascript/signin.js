@@ -7,11 +7,13 @@ async function sendflag(){
 	console.log("Have I been here????");
 	console.log("What is the flag HERE??  ", flag);
 	const res = await flag.json();
+	const divName = document.createElement("div");
 	if(res.flag){
+		return;
 		//divName.className = "alert alert-success alert-dismissible fade show";
 	}else{
 		console.log("FLAG IS HERE  ", res);
-		const divName = document.createElement("div");
+		divName.className = "alert alert-danger alert-dismissible fade show";
 		/*
 		try to add some html directly:
 		const temp = document.createElement("div");
@@ -21,16 +23,17 @@ async function sendflag(){
 		temp.innerHTML = trytext;
 
  		*/
-
-
-		divName.textContent = res.text;
-		divName.className = "alert alert-danger alert-dismissible fade show";
-		divName.role = "alert";
-		divflag.appendChild(divName);
-		window.setTimeout(function(){
-			divflag.removeChild(divName);
-		}, 2000);
 	}
+	divName.textContent = res.text;
+	divName.role = "alert";
+	divflag.appendChild(divName);
+	await window.setTimeout(function(){
+		const divName = document.querySelector(".alert");
+		divflag.removeChild(divName);
+	}, 2000);
 }
 
-sendflag();
+function test(){
+	document.getElementById("button").addEventListener("click", sendflag);
+}
+test();

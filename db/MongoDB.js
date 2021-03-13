@@ -8,14 +8,14 @@ function MyDB() {
 
 
 	myDB.signin = async (Users) => {
-		console.log("users are here:  ", Users);
+		//console.log("users are here:  ", Users);
 		const client = new MongoClient(url, {useUnifiedTopology: true});
 		await client.connect();
 		//database
 		const db = client.db(DB_NAME);
 		let flag = false;
 		const result = await db.collection("userInfo").find().toArray();
-		console.log("result is here:   ", result);
+		//console.log("result is here:   ", result);
 		result.forEach(item => {
 			if (item.name === Users.userName && item.password === Users.passWord || flag) {
 				flag = true;
@@ -34,7 +34,7 @@ function MyDB() {
 		const db = client.db(DB_NAME);
 		const result = await db.collection("userInfo");
 		const users = await result.find().toArray();
-		console.log("what is users I have now?   ", users);
+		// console.log("what is users I have now?   ", users);
 		let flag = true;
 		await users.every(item => {
 			if (item.name === Users.userName) {
