@@ -64,21 +64,24 @@ router.post("/test/signup", async function (req, res) {
 	}
 });
 
-router.post("/getSigninFlag", async (req, res) =>{
+router.post("/getSigninFlag", (req, res) =>{
+
 	if(signinNM){
+		console.log("what is this???   signinNM   ", signinNM);
 		res.send({flag: false, text: "Username is Empty"});
 		signinNM = false;
 		return;
 	}
 	if(!signinNM){
 		let textCont = "";
+		console.log("what is this???   signinflag   ", signinflag);
 		if(signinflag) textCont = "Sign in Successful";
 		else textCont = "Wrong User name or Password";
 		res.send({flag: signinflag, text: textCont});
 	}
 });
 
-router.post("/getSignupFlag", async (req, res) =>{
+router.post("/getSignupFlag", (req, res) =>{
 
 	if(signupNM){
 		res.send({flag: false, text: "Username is Empty"});
