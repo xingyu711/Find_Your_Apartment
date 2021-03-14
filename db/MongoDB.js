@@ -4,8 +4,7 @@ function MyDB() {
 	const myDB = {};
 	const DB_NAME = "apartmentsDB";
 	const url =
-		process.env.MONGO_URL || "mongodb://localhost:27017";
-
+		"mongodb+srv://KKDJoseph:findyourapartment@cluster0.11jws.mongodb.net/FIND%20YOUR%20APARTMENT?retryWrites=true&w=majority";
 
 	myDB.signin = async (Users) => {
 		//console.log("users are here:  ", Users);
@@ -118,7 +117,7 @@ function MyDB() {
 	// 			},
 	// 	  },
 	// 	};
-  
+
 	// 	userCollection.findOneAndUpdate(query, update);
 	// 	console.log(query);
 	// };
