@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const myDB = require("../db/MongoDB.js");
 const secret = require("./crypt.js");
+const alert = require("alert");
 
 let signinflag = false;
 let signupflag = false;
@@ -22,6 +23,7 @@ router.post("/test/signin", async function (req, res) {
 	} else {
 		console.log(req.body, "登录失败");
 		// 进入到登录失败的页面
+		alert("Wrong user name or password");
 		//res.redirect("/sign_in.html");
 	}
 
@@ -39,9 +41,12 @@ router.post("/test/signup", async function (req, res) {
 	console.log("what is this flag here???", signupflag);
 	if(signupflag){
 		console.log(req.body, "注册成功");
+		//res.send({flag: true, text: "Wtf"});
 		res.redirect("/sign_in.html");
 	}else{
 		console.log(req.body, "注册失败");
+		alert("User name is already taken");
+		//res.send({flag: false, text: "User name is already taken"});
 		//res.redirect("/sign_up.html");
 	}
 });
