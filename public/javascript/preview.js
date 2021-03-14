@@ -16,7 +16,7 @@ function renderPosts(post) {
 	<div class="title">${post.title}</div>
 	<hr />
 	<div class="content">${post.content}</div>
-    <br />`;
+	<br />`;
 
 	divPosts.appendChild(divPost);
 }

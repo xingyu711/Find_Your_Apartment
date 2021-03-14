@@ -44,42 +44,14 @@ h1 {
   text-align: center;
 }
 
-h2 {
-  font-size: 2rem;
-  margin-top: 2rem;
-  font-family: Marker Felt, fantasy;
-}
-
-h3 {
-  font-family: Marker Felt, fantasy;
-}
-
-.col-3 {
-  z-index: 10;
-}
-
 .col-9 {
   text-align: left;
   z-index: 10;
   flex: 1 0 auto;
 }
 
-#textbox {
-  height: 200px;
-  font-size: 14pt;
-  width: 400px;
-  text-align: top;
-  padding-top: 0;
-  padding-left: 0;
-  z-index: 10;
-}
-
 .row {
-  --bs-gutter-x: -25rem;
-}
-
-.p1 {
-  padding: 2rem;
+  --bs-gutter-x: -40rem;
 }
 
 .title {
