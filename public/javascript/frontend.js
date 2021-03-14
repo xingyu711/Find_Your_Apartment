@@ -8,8 +8,6 @@ async function showPosts() {
 	const resRaw = await fetch("/getPosts");
 	const res = await resRaw.json();
 
-	console.log("Title: ", res.title);
-	console.log("Content: ", res.content);
 	divPosts.innerHTML = "";
 	res.posts.forEach(renderPosts);
 }
@@ -19,14 +17,13 @@ function renderPosts(post) {
 	divPost.className = "post card p-1 col-6";
 
 	divPost.innerHTML = `
-	<div>${post.title}</div>
-	<br />
-	<div>${post.content}</div>`;
-	//<div><button class=btn btn-danger">Delete</button></div>;
+	<div class="title">${post.title}</div>
+	<hr />
+	<div class="content">${post.content}</div>`;
 
 	const btnDelete = document.createElement("button");
 	btnDelete.textContent = "Delete";
-	btnDelete.className = "btn btn-danger";
+	btnDelete.className = "btn btn-outline-dark";
 	btnDelete.addEventListener("click", () => deletePost(post));
 
 	// const btnComment = document.createElement("button");

@@ -1,55 +1,81 @@
 body {
-    height: 100%;
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow: auto;
-    z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow: auto;
+  z-index: -1;
+  font-size: 20px;
 }
 
 .bg {
-    height: 100%;
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow: auto;
-    background-size: 100% 100%;
-    background: url(../images/bg2.jpg) no-repeat center center;
-    background-blend-mode: soft-light;
-    z-index: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow: auto;
+  background-size: 100% 100%;
+  background: url(../images/bg2.jpg) no-repeat center center;
+  background-blend-mode: soft-light;
+  z-index: 0;
 }
 
-
 .main {
-    color: #3c240f;
-    display: flex;
-    font-family: "Playfair Display", serif;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 100vh;
-    z-index: 5;
+  color: #3c240f;
+  display: block;
+  font-family: "Playfair Display", serif;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  min-height: 100vh;
+  z-index: 5;
 }
 
 h1 {
-    z-index: 10;
+  z-index: 10;
+  font-size: 5rem;
+  position: static;
+  font-weight: bold;
+  font-family: Snell Roundhand, cursive;
+  margin-top: 20px;
+  margin-bottom: auto;
+  line-height: 2;
+  left: 30px;
+  text-align: center;
 }
 
-.col-3{
-    z-index: 10;
+h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+  font-family: Marker Felt, fantasy;
 }
 
-.col-9{
-    text-align: right;
-    z-index: 10;
+h3 {
+  font-family: Marker Felt, fantasy;
+}
+
+.col-3 {
+  z-index: 10;
+}
+
+.col-9 {
+  text-align: left;
+  z-index: 10;
 }
 #textbox {
-    height: 200px;
-    font-size: 14pt;
-    width: 400px;
-    text-align: top;
-    padding-top: 0;
-    padding-left: 0;
-    z-index: 10;
+  height: 200px;
+  font-size: 14pt;
+  width: 400px;
+  text-align: top;
+  padding-top: 0;
+  padding-left: 0;
+  z-index: 10;
+}
+
+.row {
+  --bs-gutter-x: -25rem;
+}
+
+.btn-outline-dar {
+  padding: 7px 15px;
 }

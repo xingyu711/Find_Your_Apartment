@@ -91,11 +91,6 @@ header {
   font-family: "Akaya Telivigala", cursive;
 }
 
-h1,
-h2 {
-  color: white;
-}
-
 h3 {
   color: rgb(0, 0, 0);
 }
@@ -147,13 +142,4 @@ p {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
-}
-
-#textbox {
-  height: 200px;
-  font-size: 14pt;
-  width: 400px;
-  text-align: top;
-  padding-top: 0;
-  padding-left: 0;
 }

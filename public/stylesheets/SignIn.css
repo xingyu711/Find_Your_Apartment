@@ -1,35 +1,35 @@
 html,
 body {
-    margin: 0px;
+  margin: 0px;
 }
 
 .SignIn {
-    background: url(../images/bg2.jpg) center center / cover no-repeat;
+  background: url(../images/bg2.jpg) center center / cover no-repeat;
 }
 
 .signcard {
-    background-color: #FAF9DE;
-    opacity: 0.8;
-    height: 475px;
-    width: 300px;
-    margin-top: auto;
-    margin-bottom: auto;
+  background-color: #faf9de;
+  opacity: 0.8;
+  height: 475px;
+  width: 300px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .card-header {
-    color: #3c240f;
+  color: #3c240f;
 }
 
 .card-body {
-    color: #3c240f;
+  color: #3c240f;
 }
 
 .container-fluid {
-    align-content: center;
-    height: 100vh;
+  align-content: center;
+  height: 100vh;
 }
 
 a {
-    font-family: "Roboto", sans-serif;
-    color: brown;
+  font-family: "Roboto", sans-serif;
+  color: brown;
 }
