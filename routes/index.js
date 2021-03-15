@@ -31,6 +31,7 @@ router.post("/test/signin", async function (req, res) {
 
 router.post("/test/signup", async function (req, res) {
 	if(req.body.userName === "") return;
+	if(req.body.passWord === "") return;
 	console.log("what is the body here??   ", req.body);
 	const pw = secret.encrypt(req.body.passWord);
 	const body = {
