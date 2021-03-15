@@ -1,10 +1,9 @@
 const { MongoClient, ObjectID } = require("mongodb");
-
+require("dotenv").config();
 function MyDB() {
 	const myDB = {};
 	const DB_NAME = "apartmentsDB";
-	const url =
-		"mongodb+srv://KKDJoseph:findyourapartment@cluster0.11jws.mongodb.net/FIND%20YOUR%20APARTMENT?retryWrites=true&w=majority";
+	const url = process.env.URL;
 
 	myDB.signin = async (Users) => {
 		//console.log("users are here:  ", Users);
