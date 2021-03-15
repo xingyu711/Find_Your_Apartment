@@ -29,25 +29,17 @@ $ npm install
 - [npm](https://nodejs.org/en/download/package-manager/)
 
 ## Instructions
-- Main files:
-  * index.html
-  * Education.html
-  * Project.html
-  * Gallery.html
-  
-- Main folder:
-  * assests
-    - css: Three css files for different pages
-    - gallery: Photos taken in Irvine
-    - images: Images used for icon and background
-    - js: main javascript file for the gallery
-
+- Main folders:
+  * db: Connections to databases and other operations.
+  * public: Static files. Include frontend javascript, html files and corresponding css files.
+  * routes: Backend javascript files.
 
 ## Screenshots:
-![](images/calendar.png)
-![](images/crud.png)
-![](images/form.png)
-![](images/table.png)
+![](Screenshots/homepage.jpg)
+![](Screenshots/signin.jpg)
+![](Screenshots/signup.jpg)
+![](Screenshots/preview.jpg)
+![](Screenshots/forum.jpg)
 
 ### License
 [MIT]()
