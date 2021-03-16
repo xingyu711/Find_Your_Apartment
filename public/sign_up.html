@@ -25,7 +25,8 @@
             </div>
             <div class="card-body">
               <div class="containAlert"></div>
-              <form action="/test/signup" method="POST">
+              <!--action="/test/signup" method="POST"-->
+              <form>
                 <div class="form-group">
                   <label for="userName">Username</label>
                   <input
@@ -47,7 +48,7 @@
                     placeholder="123abc"
                   />
                 </div>
-                <div class="form group">
+                <div class="form-group" type = "submit">
                   <label for="passWord2">Verify Password</label>
                   <input
                     type="password"
@@ -58,7 +59,7 @@
                   />
                 </div>
                 <div class="form-group">
-                  <button type="submit" class="btn btn-dark" id="button">
+                  <button type="button" class="btn btn-dark" id="button">
                     Sign Up
                   </button>
                 </div>
