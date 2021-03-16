@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const myDB = require("../db/MongoDB.js");
 const secret = require("./crypt.js");
-const alert = require("alert");
+//const alert = require("alert");
 
 let signinflag = false;
 let signupflag = false;
@@ -23,7 +23,7 @@ router.post("/test/signin", async function (req, res) {
 	} else {
 		console.log(req.body, "登录失败");
 		// 进入到登录失败的页面
-		alert("Wrong user name or password");
+		//alert("Wrong user name or password");
 		//res.redirect("/sign_in.html");
 	}
 
@@ -32,6 +32,7 @@ router.post("/test/signin", async function (req, res) {
 router.post("/test/signup", async function (req, res) {
 	if(req.body.userName === "") return;
 	if(req.body.passWord === "") return;
+	if(req.body.passWord != req.body.passWord2) return;
 	console.log("what is the body here??   ", req.body);
 	const pw = secret.encrypt(req.body.passWord);
 	const body = {
@@ -46,7 +47,7 @@ router.post("/test/signup", async function (req, res) {
 		res.redirect("/sign_in.html");
 	}else{
 		console.log(req.body, "注册失败");
-		alert("User name is already taken");
+		//alert("User name is already taken");
 		//res.send({flag: false, text: "User name is already taken"});
 		//res.redirect("/sign_up.html");
 	}
@@ -105,15 +106,4 @@ router.post("/createPost", async (req, res) => {
 	}
 });
 
-// router.post("/createComment", async (req, res) => {
-//  console.log("Create Comment", req.body);
-//  try {
-//   const comment = req.body;
-//   const dbRes = await myDB.createComment(comment);
-//   res.send({ done: dbRes });
-//  } catch (e) {
-//   console.log("Error", e);
-//   res.status(400).send({ err: e });
-//  }
-// });
 module.exports = router;

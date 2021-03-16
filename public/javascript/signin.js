@@ -22,11 +22,7 @@ async function sendflag(){
 		window.setTimeout(function(){
 			divflag.removeChild(divName);
 		}, 2000);
-	}
-
-
-
-	/*else{
+	} else{
 		const flag = await fetch("/getSigninFlag", {
 			method: "POST"
 		});
@@ -40,14 +36,14 @@ async function sendflag(){
 		}else{
 			console.log("FLAG IS HERE  ", res);
 			divName.className = "alert alert-danger alert-dismissible fade show";
-			/!*
+			/*
 			try to add some html directly:
 			const temp = document.createElement("div");
 			const trytext = "<div class=\"alert alert-primary\" role=\"alert\">\n" +
 				"  A simple primary alert—check it out!\n" +
 				"</div>";
 			temp.innerHTML = trytext;
-			*!/
+			*/
 		}
 		divName.textContent = res.text;
 		divName.role = "alert";
@@ -56,7 +52,7 @@ async function sendflag(){
 			divflag.removeChild(divName);
 		}, 2000);
 
-	}*/
+	}
 }
 
 function test(){

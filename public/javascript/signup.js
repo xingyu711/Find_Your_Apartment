@@ -23,8 +23,7 @@ async function sendflag(){
 		window.setTimeout(function(){
 			divflag.removeChild(divName);
 		}, 2000);
-	}
-	else if(pw1 !== pw2){
+	} else if(pw1 !== pw2){
 		const divName = document.createElement("div");
 		divName.textContent = "Passwords are not same";
 		divName.className = "alert alert-danger alert-dismissible fade show";
@@ -33,8 +32,7 @@ async function sendflag(){
 		window.setTimeout(function(){
 			divflag.removeChild(divName);
 		}, 2000);
-	}
-	/*else{
+	} else{
 		const flag = await fetch("/getSignupFlag", {
 			method: "POST"
 		});
@@ -47,7 +45,7 @@ async function sendflag(){
 		}else{
 			console.log("FLAG IS HERE  ", res);
 			divName.className = "alert alert-danger alert-dismissible fade show";
-			/!*
+			/*
 			try to add some html directly:
 			const temp = document.createElement("div");
 			const trytext = "<div class=\"alert alert-success alert-dismissable\" role=\"alert\" id=\"windows\">\n" +
@@ -55,7 +53,7 @@ async function sendflag(){
 				"    \n" +
 				"</div>";
 			temp.innerHTML = trytext;
-			 *!/
+			 */
 		}
 
 		divName.textContent = res.text;
@@ -65,7 +63,7 @@ async function sendflag(){
 			divflag.removeChild(divName);
 		}, 2000);
 
-	}*/
+	}
 }
 
 function test(){
