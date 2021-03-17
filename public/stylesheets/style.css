@@ -50,10 +50,8 @@ section {
 }
 
 .button {
-  padding: 10px;
   margin: 2px;
   float: left;
-  font-size: 20px;
   color: black;
   background: linear-gradient(to bottom, #faf9de 100%, #091b66 2%);
   background-color: #decdbe;

@@ -1,10 +1,9 @@
-html,
 body {
   height: 100%;
   width: 100%;
-  margin: 0 0 0 0;
-  padding: 0 0 0 0;
-  overflow: hidden hidden;
+  margin: 0px;
+  padding: 0px;
+  overflow: auto;
   z-index: -1;
   font-size: 20px;
 }
@@ -12,8 +11,9 @@ body {
 .bg {
   height: 100%;
   width: 100%;
-  margin: 0 0 0 0 ;
-  padding: 0 0 0 0 ;
+  margin: 0px;
+  padding: 0px;
+  overflow: auto;
   background-size: 100% 100%;
   background: url(../images/bg2.jpg) no-repeat center center;
   background-blend-mode: soft-light;
@@ -29,21 +29,6 @@ body {
   text-align: left;
   min-height: 100vh;
   z-index: 5;
-}
-
-.button {
-  color: black;
-  background: linear-gradient(to bottom, #faf9de 100%, #091b66 2%);
-  background-color: #decdbe;
-  border: 1px solid #54381e;
-  cursor: pointer;
-  font-size: 14px;
-  text-decoration: none;
-}
-
-.button:hover {
-  background: linear-gradient(to bottom, #fad8be 5%, #cbf5fb 100%);
-  background-color: #0e4b4d;
 }
 
 h1 {
@@ -71,4 +56,19 @@ h1 {
 
 .title {
   font-weight: bold;
+}
+
+.button {
+  color: black;
+  background: linear-gradient(to bottom, #faf9de 100%, #091b66 2%);
+  background-color: #decdbe;
+  border: 1px solid #54381e;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: linear-gradient(to bottom, #fad8be 5%, #cbf5fb 100%);
+  background-color: #0e4b4d;
 }
